@@ -2,7 +2,7 @@
 title: 'Yopass mit Docker und Traefik installieren'
 description: 'Yopass ist eine Open-Source-Plattform zur sicheren und schnellen Übermittlung vertraulicher Daten.'
 published: 2024-12-20
-category: Homelab
+category: Pastebin
 tags: [Share, Yopass, Selfhosted]
 cover: /images/posts/yopass.png
 draft: false

@@ -4,6 +4,7 @@ description: 'Authelia bietet Multifaktorauthentifizierung und Passkeys für ung
 published: 2024-12-27
 tags: ['Docker', 'Authelia', 'Multifactor-Auth', 'Passkeys', 'Open-Source']
 cover: /images/posts/authelia.png
+category: SSO
 ---
 
 # Intro

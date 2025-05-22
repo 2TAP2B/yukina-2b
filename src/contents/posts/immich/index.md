@@ -4,7 +4,7 @@ description: 'Immich bietet die perfekte alternative zu Google Photos oder iClou
 published: 2025-01-07
 tags: ['Linux', 'Server', 'Immich', 'Photos', 'Docker', 'Backup', 'Open-Source']
 cover: /images/posts/immich.png
-
+category: Photos
 ---
 
 ## 1. Intro

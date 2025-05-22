@@ -5,6 +5,7 @@ published: 2024-12-28
 tags: ['Reverse-proxy', 'Open-Source', 'SSL', 'Traefik', 'Whitelist']
 cover: /images/posts/traefik.png
 draft: false
+category: Reverse-Proxy
 ---
 ## 1. Intro
 
@@ -18,8 +19,8 @@ Es gibt viele verschiedene Möglichkeiten, so etwas zu realisieren. Mit Traefik 
 
 ## 2. Grundvoraussetzung
 
-- [Docker & Docker Compose v2](/blog/server-setup#5-docker-und-docker-compose)
-- [Traefik Setup](/blog/traefik)
+- [Docker & Docker Compose v2](/posts/server-setup#5-docker-und-docker-compose)
+- [Traefik Setup](/posts/traefik)
 
 ---
 

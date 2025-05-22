@@ -4,6 +4,7 @@ description: 'Open-Source-Podcast-Plattform mit Fediverse-Anbindung, Kommentaren
 published: 2024-12-30
 tags: ['Podcast', 'Open-Source', 'Fediverse', 'Castopod']
 cover: /images/posts/castopod-logo.png
+category: Podcasts
 ---
 
 Castopod ist eine kostenlose und Open-Source-Software, mit der du deinen Podcast ganz einfach selbst hosten kannst.

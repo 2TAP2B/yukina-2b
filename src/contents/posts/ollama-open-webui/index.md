@@ -4,7 +4,7 @@ description: 'Hier zeige ich dir, wie du OpenWebUI und Ollama mit Docker install
 published: 2025-01-09
 tags: ['Linux', 'LLM', 'KI', 'Docker', 'Open-Source', 'AI', 'Ollama', 'Openwebui']
 cover: /images/posts/ollama.png
-
+category: AI
 ---
 # 1. Intro
 

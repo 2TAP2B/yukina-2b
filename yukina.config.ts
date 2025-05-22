@@ -8,7 +8,7 @@ const YukinaConfig: Configuration = {
 
   description: "2bs blog",
 
-  site: "https://yukina-blog.vercel.app",
+  site: "https://2tap2.be",
 
   locale: "de", // set for website language and date format
 
@@ -24,6 +24,10 @@ const YukinaConfig: Configuration = {
     {
       nameKey: I18nKeys.nav_bar_about,
       href: "/about",
+    },
+    {
+      nameKey: I18nKeys.nav_bar_projects,
+      href: "/projects",
     },
     {
       nameKey: I18nKeys.nav_bar_github,

@@ -3,9 +3,9 @@ title: 'Basic Server Setup'
 description: 'So könnte ein Basic Setup aussehen, wenn du dich entscheidest in der Cloud zu hosten.'
 published: 2024-12-16
 tags: [Linux, Server, Selfhosted]
-category: Cloud
 cover: /images/posts/server.png
 draft: false
+category: Hardware
 ---
 
 # 1. Intro

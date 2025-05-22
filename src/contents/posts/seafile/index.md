@@ -4,7 +4,7 @@ description: 'Hier zeige ich dir, wie du Seafile mit Docker installieren kannst.
 published: 2025-01-08
 tags: ['Docker', 'Seafile', 'Linux', 'Cloud-Storage', 'Sync', 'Open-Source', 'Filesync']
 cover: /images/posts/seafile.png
-
+category: Sync
 ---
 
 ## 1. Intro 

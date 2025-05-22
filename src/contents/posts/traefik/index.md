@@ -4,7 +4,7 @@ description: 'Traefik ist ein moderner Reverse Proxy, perfekt für containerisie
 published: 2024-12-17
 slug: traefik
 tags: [Reverse Proxy, Traefik, Selfhosted]
-category: Homelab
+category: Reverse-Proxy
 cover: /images/posts/traefik.png
 draft: false
 ---
