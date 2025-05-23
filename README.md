@@ -93,4 +93,4 @@ pnpm preview
 
 - [Astro Fuwari Template](https://github.com/saicaca/fuwari) for providing the main design ideas and some code implementations
 
-Pipline Check1
+Pipline Check2
