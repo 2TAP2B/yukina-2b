@@ -1,7 +1,7 @@
 ---
 title: 'Pocket ID mit Docker und Traefik installieren'
 description: 'Pocket ID ist ein einfacher OIDC-Anbieter, der es Benutzern ermöglicht, sich mit ihren Passkeys bei Ihren Diensten zu authentifizieren.'
-published: 2025-02-19
+published: 2025-05-27
 tags: ['oidc', 'open-source', 'passkey', 'identity-provider', 'pocket-id']
 cover: /images/posts/pocketid.png
 category: SSO
@@ -15,7 +15,11 @@ Das Ziel von Pocket ID ist es, einfach und benutzerfreundlich zu sein. Es gibt a
 
 Eine Besonderheit von Pocket ID ist, dass es nur die Passkey-Authentifizierung unterstützt, was bedeutet, dass du kein Passwort benötigen. Zum Beispiel kannst du jetzt einen physischen Yubikey verwenden, um dich einfach und sicher bei all deinen selbst gehosteten Diensten anzumelden.
 
-> Getestet mit v 1.0
+#### Versionierung
+Datum | Änderung
+--|--
+19-02-2025| Initialer Release
+27-05-2025| Anpassungen an Version 1.0
 
 ---
 

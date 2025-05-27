@@ -23,6 +23,12 @@ Die Installation ist mit Docker ziemlich schnell gemacht, also legen wir los.
 
 > Anleitung getestet mit v1.133.1
 
+#### Versionierung
+Datum | Änderung
+--|--
+11-02-2025| Initialer Release
+26-05-2025| Anpassungen an Version 1.133.1
+
 ---
 
 ## 2. Voraussetzungen
