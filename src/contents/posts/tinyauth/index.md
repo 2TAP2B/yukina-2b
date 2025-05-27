@@ -2,16 +2,14 @@
 title: 'Tinyauth mit Docker und Traefik installieren'
 description: 'Tinyauth ist ein minimalistischer Auth-Provider mit WebUI für kleine Selfhosted-Projekte.'
 published: 2025-05-27
-tags: ['Linux', 'Server', 'Docker', 'Auth', 'Reverse Proxy', 'Traefik', 'Open-Source']
+tags: ['Linux', 'Homelab', 'Docker', 'Auth', 'Reverse Proxy', 'Traefik', 'Open-Source']
 cover: /images/posts/tinyauth.png
-category: Tools
+category: Auth
 ---
 
 ## 1. Intro
 
-Tinyauth ist eine schlanke, Open-Source-Lösung für einfache Benutzer-Authentifizierung via Login-Screen – ideal für kleine Selfhosted-Projekte oder interne Tools ohne eigenes Benutzer-Management. 
-
-Du brauchst keinen großen OAuth2-Anbieter oder Keycloak – Tinyauth bietet dir eine einfache WebUI zum Verwalten von Benutzern und lässt sich super mit einem Reverse Proxy wie Traefik kombinieren.
+Tinyauth ist eine meiner Lieblingsanwendungen in meinem Homelab. Es ist eine super schnelle, lightweight Alternative zu Authelia oder Authentik – perfekt fürs Homelab. Die Installation ist in wenigen Minuten erledigt und die Integration mit Traefik läuft absolut reibungslos.
 
 In diesem Setup verwende ich Tinyauth ausschließlich in Kombination mit Pocket ID, um z. B. das Traefik-Dashboard abzusichern und vor externem Zugriff zu schützen. Wie genau das funktioniert, zeige ich euch hier.
 

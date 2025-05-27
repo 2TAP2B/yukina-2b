@@ -21,7 +21,7 @@ kann ich mich auch daran beteiligen und neue Features entwickeln oder vorschlage
 
 Die Installation ist mit Docker ziemlich schnell gemacht, also legen wir los.
 
-> Anleitung für v1.133.1
+> Anleitung getestet mit v1.133.1
 
 ---
 

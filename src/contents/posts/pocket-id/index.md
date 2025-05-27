@@ -15,6 +15,8 @@ Das Ziel von Pocket ID ist es, einfach und benutzerfreundlich zu sein. Es gibt a
 
 Eine Besonderheit von Pocket ID ist, dass es nur die Passkey-Authentifizierung unterstützt, was bedeutet, dass du kein Passwort benötigen. Zum Beispiel kannst du jetzt einen physischen Yubikey verwenden, um dich einfach und sicher bei all deinen selbst gehosteten Diensten anzumelden.
 
+> Getestet mit v 1.0
+
 ---
 
 ## 2. Voraussetzungen
@@ -44,12 +46,19 @@ nano /opt/containers/pocket-id/compose.yml
 
 ```yaml title="compose.yml"
 services:
-  pocket-id:
-    image: ghcr.io/pocket-id/pocket-id
+  pocketid:
+    image: ghcr.io/pocket-id/pocket-id:latest
+    container_name: pocket-id
     restart: unless-stopped
     env_file: .env
     volumes:
-      - "./data:/app/backend/data"
+      - "./data:/app/data"
+    healthcheck:
+      test: "curl -f http://localhost:1411/healthz"
+      interval: 1m30s
+      timeout: 5s
+      retries: 2
+      start_period: 10s
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.pocket.entrypoints=websecure"
@@ -57,17 +66,10 @@ services:
       - "traefik.http.routers.pocket.tls=true"
       - "traefik.http.routers.pocket.tls.certresolver=cloudflare"
       - "traefik.http.routers.pocket.service=pocket"
-      - "traefik.http.services.pocket.loadbalancer.server.port=80"
+      - "traefik.http.services.pocket.loadbalancer.server.port=1411"
       - "traefik.docker.network=frontend"
     networks:
       - frontend
-    # Optional healthcheck  
-    healthcheck:
-      test: "curl -f http://localhost/health"
-      interval: 1m30s
-      timeout: 5s
-      retries: 2
-      start_period: 10s
 networks:
   frontend:
     external: true
@@ -87,7 +89,9 @@ nano /opt/containers/pocket-id/.env
 ```yaml title=".env"
 
 # Bitte die Domain wie oben anpassen
-PUBLIC_APP_URL=https://pocket.deinedomain.de
+APP_URL=https://pocket.id
+DB_CONNECTION_STRING=file:data/pocket-id.db?_pragma=journal_mode(WAL)&_pragma=busy_timeout(2500)&_txlock=immediate
+PORT=1411
 ``` 
 
 ---
