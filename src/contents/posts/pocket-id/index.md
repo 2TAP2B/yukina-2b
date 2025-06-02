@@ -2,7 +2,7 @@
 title: 'Pocket ID mit Docker und Traefik installieren'
 description: 'Pocket ID ist ein einfacher OIDC-Anbieter, der es Benutzern ermöglicht, sich mit ihren Passkeys bei Ihren Diensten zu authentifizieren.'
 published: 2025-05-27
-tags: ['oidc', 'open-source', 'passkey', 'identity-provider', 'pocket-id']
+tags: ['OIDC', 'Open-Source', 'Passkey', 'Identity-Provider', 'Pocket-ID']
 cover: /images/posts/pocketid.png
 category: SSO
 ---
