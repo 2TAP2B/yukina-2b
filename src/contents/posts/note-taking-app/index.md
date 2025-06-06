@@ -38,7 +38,7 @@ Aber:
 *   Der Selfhosted-Sync ist ein ständiges Gefrickel.
 *   Und: **nicht Open Source.**
 
-Damit war klar – so schön das Tool ist – es fällt langfristig raus.
+Damit war klar – so schön das Tool ist – nein danke!
 
 * * *
 
@@ -47,7 +47,7 @@ Damit war klar – so schön das Tool ist – es fällt langfristig raus.
 Vom Look and Feel her ähnlich wie Obsidian, aber: Open Source.  
 Klingt erstmal gut.  
 In der Praxis war der Sync aber noch frustrierender als bei Obsidian, wenn man ihn selbst hosten will.  
-Und leider wirkt es zunehmend so, als würde sich bei der Weiterentwicklung nicht mehr viel tun. Auf Reddit liest man einiges über interne Probleme – wie viel davon stimmt, kann ich nicht beurteilen, aber das Vertrauen ist jedenfalls weg.
+Und leider wirkt es zunehmend so, als würde sich bei der Weiterentwicklung nicht mehr viel tun. Auf Reddit liest man einiges über interne Probleme – wie viel davon stimmt, kann ich nicht beurteilen, aber Logseq und ich - das wird nichts mehr!
 
 * * *
 
@@ -64,26 +64,29 @@ Aber:
 
 ### **AppFlowy (Selfhosted)**
 
-Lange mein Favorit.  
+Lange mein daily note-driver.  
 Geschrieben in Rust und Flutter, Open Source, super Sync, tolles UI für Mobile und Desktop.  
 Aber auch hier wieder: **zu mächtig für meinen Solo-Einsatz.**  
-Allein zehn Container laufen dafür in meinem Homelab – für private Notizen einfach übertrieben.  
+Allein zehn Container laufen dafür in meinem Homelab – für private Notizen einfach OP.  
 Zudem liegt der Fokus der Entwicklung mittlerweile stark auf KI-Features. Die brauche ich schlicht nicht.  
 Features, die mir fehlten, hatte ich mal bei GitHub eingereicht – aber offenbar liegen die nicht auf der Roadmap.  
-Trotzdem: Für Teams ist AppFlowy nach wie vor eine fette Empfehlung.
+Trotzdem: Für Teams ist AppFlowy nach wie vor eine richtig nice Lösung.
 
 * * *
 
-### **Trillium Next**
+### **Trilium Next**
 
-Und hier bin ich nun endlich gelandet – und bisher rundum zufrieden.
+Und hier bin ich nun endlich gelandet – und bisher voll zufrieden.
 
 *   **Open Source.**
 *   Läuft mit wenigen Zeilen Docker im eigenen Container.
 *   Der Sync zwischen zwei Geräten ist quasi in Echtzeit – kaum Verzögerung.
-*   Trillium Next läuft komplett im Browser.  
+*   Trilium Next läuft komplett im Browser.  
     Ich nutze es als **PWA** – auf Android und unter Fedora – und es fühlt sich auf beiden Plattformen wie eine native App an. Besonders die mobil optimierte Version auf dem Phone überzeugt mich richtig.
 
+### Mobile View
 ![mobile-view](./mobile.png)
-
+### Desktop View
 ![desktop-view](./desktop.png)
+
+Werde auch noch einen ausführlichen Artikel mit Anleitung zum selbst hosten über TriliumNext schreiben
