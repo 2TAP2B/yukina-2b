@@ -38,14 +38,15 @@ Aktuell läuft auf dem neuen Homelab eine **Ubuntu 24.04-VM mit Docker** und fol
 - [**Pocket-ID**](/posts/pocket-id)
 - **Jellyfin**  
 - **Forgejo**  
-- **TinyAuth**  
+- [**TinyAuth**](/posts/tinyauth)  
 - **Portainer**  
-- **Pingvin Share**  
-- **Headscale + Headplane UI**  
+- **Pingvin Share**
+- [**Headscale + Headplane UI**](/posts/headscale)  
 - **AppFlowy Cloud**  
-- **WG-Easy**  
+- [**WG-Easy**](/posts/wg-easy)  
 - **Memos**  
 - **IT-Tools**  
+- **Trilium**
 - **Collabora**  
 - **Paperless**  
 - **Audiobookshelf**  
