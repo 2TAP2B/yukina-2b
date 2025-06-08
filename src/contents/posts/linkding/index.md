@@ -166,3 +166,39 @@ Noch anzupassen:
 > LD_SUPERUSER_NAME=user <br>
   LD_SUPERUSER_PASSWORD=password
 
+---
+
+## Linkding starten
+
+Nun starten wir den Container mittels folgendem Befehl:
+``` 
+docker compose -f /opt/containers/linkding/compose.yml up -d
+```
+
+Sobald der Container ausgerollt ist könnt ihr nun eure Domain aufrufen. Beim ersten Start braucht der Container ca. 2 Minuten.
+
+Ruft nun im Browser die gewählte Domain auf und dann solltet ihr folgendes sehen.
+
+![linkding-init-login](./linkding1.png)
+
+Meldet euch mit euren gewählten Daten an und schon könnt ihr Bookmarks hinzufügen.
+
+![linkding-init-login](./linkding2.png)
+
+Über den Menü-Punkt Settings -> Admin könnt ihr euch User Auth Token erstellen.
+
+![linkding-init-login](./linkding3.png)
+
+Diese werden benötigt um zB. sicher mit der Android App zu kommunizieren.
+
+Ich persönlich nutze Firefox und das entsprechende Firefox Plugin, auch hier wird das API Token benötigt.
+
+Auf meinem Smartphone habe ich die App Linkdy und bin damit sehr zufrieden. Weitere Apps und Plugins findet ihr im GitHub Repro.
+
+---
+
+## Quelle:
+
+https://github.com/sissbruecker/linkding
+
+https://github.com/JGeek00/linkdy

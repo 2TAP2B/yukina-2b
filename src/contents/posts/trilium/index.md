@@ -9,7 +9,7 @@ category: Notes
 
 Wie meine Reise bis hin zu Trilium Notes aussah, habe ich ja [hier schon einmal ausführlich beschrieben](/posts/note-taking-app) – inklusive der vielen Tools, die vorher kamen und warum sie es am Ende nicht geworden sind.
 
-In diesem Beitrag möchte ich euch nun kurz zeigen, wie ich Trilium Notes selbst installiert habe – in meinem Fall hinter einem Traefik-Reverse-Proxy. Außerdem teile ich noch ein paar Gedanken zur App selbst.
+In diesem Beitrag möchte ich euch nun kurz zeigen, wie ich Trilium Notes selbst installiert habe – in meinem Fall hinter Traefik. Außerdem teile ich noch ein paar Gedanken zur App selbst.
 
 ---
 
