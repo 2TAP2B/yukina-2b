@@ -154,7 +154,7 @@ Das API-Token benötigt die Berechtigung `Zone > DNS > Edit`.
 Startet Traefik mit dem Befehl:
 
 ```bash title="im traefik Verzeichnis /opt/containers/traefik"
-docker-compose up -d
+docker compose up -d
 ```
 
 Nach wenigen Sekunden sollte Traefik laufen. Ihr könnt das Dashboard über `http://<eure-ip>:8080` erreichen. (Das Dashboard ist in dieser Konfiguration nicht gesichert und sollte in der Produktion deaktiviert oder geschützt werden.)
