@@ -51,6 +51,10 @@ const YukinaConfig: Configuration = {
       icon: "line-md:chat-round-dots-twotone",
       link: "https://matrix.to/#/@tobias:xanten.cc",
     },
+    {
+      icon: "line-md:rss",
+      link: "https://2tap2.be/rss.xml",
+    },
   ],
   maxSidebarCategoryChip: 6, // It is recommended to set it to a common multiple of 2 and 3
   maxSidebarTagChip: 12,

@@ -4,7 +4,7 @@ description: 'Mit Audiobookshelf baust du dir deinen eigenen Podcatcher – selb
 
 published: 2025-06-17
 tags: ['Podcasts', 'Podcatcher', 'Mobile', 'Desktop', 'Docker', 'Open-Source', 'Linux']
-cover: /images/posts/trilium.png
+cover: /images/posts/audiobookshelf.png
 category: Podcast
 ---
 ## Dein eigener Podcatcher? Warum eigentlich nicht.
