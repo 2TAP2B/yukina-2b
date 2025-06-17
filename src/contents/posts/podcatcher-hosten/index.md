@@ -12,8 +12,9 @@ category: Podcast
 Du wolltest schon immer mal **deinen eigenen Podcatcher bauen**?  
 Nicht abhängig sein von Spotify, Apple Podcasts oder sonstigen Plattformen, sondern deinen Podcatcher **selbst hosten und verwalten**?
 
-Genau das hab ich jetzt mal ausprobiert – und zwar mit **Audiobookshelf**.  
-Spoiler: Funktioniert richtig gut.
+Genau das hab ich jetzt mal ausprobiert – und zwar mit **Audiobookshelf**. 
+
+**Spoiler:** Funktioniert richtig gut.
 
 * * *
 
@@ -22,7 +23,7 @@ Spoiler: Funktioniert richtig gut.
 Audiobookshelf ist eigentlich ein self-hosted **Hörbuchserver**, aber:  
 Das Ding kann auch Podcasts. Und zwar **genauso wie ein klassischer Podcatcher** – nur eben **auf deinem eigenen Server**.
 
-Du kannst deine Podcasts über **klassische RSS-Feeds abonnieren**, automatisch neue Episoden downloaden lassen und über verschiedene Clients (z. B. **Plapper** für iOS oder **Lissen** auf Android) abspielen.
+Du kannst deine Podcasts über **klassische RSS-Feeds abonnieren**, automatisch neue Episoden downloaden lassen und über verschiedene Clients (z. B. [**Plappa**](https://github.com/LeoKlaus/plappa) für iOS oder [**Lissen**](https://github.com/GrakovNe/lissen-android) auf Android) abspielen.
 
 Ich finde das eine ziemlich coole Sache und dieses Setup läuft seit einigen Monaten sehr stabil und ich bin voll happy damit.
 
@@ -45,21 +46,37 @@ Hier ein ganz kurzer Überblick, wie du loslegen kannst:
 
 ## **Audiobookshelf installieren**
 
+#### Versionierung
+Datum | Änderung
+--|--
+17-06-2025| Initialer Release
+
+---
+
+## Voraussetzungen
+
+Bevor wir starten, stellt sicher, dass folgende Voraussetzungen erfüllt sind:
+
+- [Docker & Docker Compose v2](/posts/server-setup#5-docker-und-docker-compose)
+- [Traefik Setup](/posts/traefik)
+
+---
+
 **Zu erst legen wir mal die passende Ordner Struktur an**
 
-```
+```bash
 mkdir -p /opt/containers/audiobookshelf && cd /opt/containers/audiobookshelf
 ```
 
 Erstellen die `compose.yaml`
 
-```
+```bash
 nano /opt/containers/audiobookshelf/compose.yaml
 ```
 
 Und pasten folgenden Inhalt rein
 
-```
+```yaml
  services:
   audiobookshelf:
     image: ghcr.io/advplyr/audiobookshelf:latest
@@ -95,40 +112,81 @@ Ihr könnt die Dateien aber auch einfach direkt im Verzeichnis ablegen, z. B. 
 
 Startet den Server nun mit
 
-```
+```bash
 docker compose up -d
 ```
 
 * * *
 
-Dann ruft ihr eure Domain im Browser auf und sollten erstmal begrüßt werden von audiobookshelf und erstellt euch einen account
+## Audiobookshelf einrichten
 
-![benutzer anlegen](./init1.png)
+Dann ruft ihr eure Domain im Browser auf – und solltet erstmal von Audiobookshelf begrüßt werden. Erstellt euch hier einen Account.
 
-mit dem eben erstellten user loggt ihr euch nun ein
+![Account in Audiobookshelf anlegen](./init1.png)
 
-![first login](./login.png)
+Mit dem eben erstellten User loggt ihr euch nun ein.
 
-und nun können wir hier unsere erste bibliothek hinzufügen
+![Erster Login in Audiobookshelf](./login.png)
 
-![libary hinzufügen](./add-lib.png)
+Jetzt können wir unsere erste Bibliothek hinzufügen.
 
-Klickt dafür hier auf `Browse for Folder`
+![Bibliothek in Audiobookshelf hinzufügen](./add-lib.png)
 
-![libary hinzufügen](./browser-folder.png)
+Klickt dafür auf `Browse for Folder`.
 
-Wählt dann denn Ordner `podcasts` aus, das ist der Ordner im Container in den ihr in der docker compose eure podcasts mountet.
+![Ordner in Audiobookshelf auswählen](./browser-folder.png)
 
-![libary hinzufügen](./choose-folder.png)
+Wählt dann den Ordner `podcasts` aus – das ist der Ordner im Container, den ihr in eurer `docker-compose`-Datei gemountet habt.
 
-Mit create fügt ihr diesen ordner nun in audibookshelf ein und der inhalt wird erstmal gescannt, falls schon inhalte vorhanden sein sollten, wie bei mir.
+![Podcast-Ordner auswählen](./choose-folder.png)
 
-![libary hinzufügen](./create.png)
+Mit `Create` fügt ihr diesen Ordner in Audiobookshelf ein. Der Inhalt wird gescannt – falls schon Podcasts vorhanden sind, wie bei mir.
 
-### Fazit: Dein eigener Podcast-Server – schnell gebaut, dauerhaft glücklich
+![Ordner in Audiobookshelf erstellen](./create.png)
 
-Audiobookshelf macht genau das, was ein Podcatcher machen soll:  
-**Podcast abonnieren, neue Episoden automatisch laden, hören – fertig.**
+Hier könnt ihr den Scan auch manuell anstoßen.
 
-Nur läuft das Ganze **auf deiner eigenen Plattform**.  
-Und das fühlt sich einfach gut an.
+![Scan der Bibliothek manuell starten](./scan-libary.png)
+
+Nun sollten Thumbnails und Audiodateien heruntergeladen sein – und euer Feed sieht dann ungefähr so aus:
+
+![Übersicht der Podcast-Bibliothek in Audiobookshelf](./lib-overview.png)
+
+Jetzt könnt ihr einfach den gewünschten Feed hinzufügen – und neue Inhalte werden automatisch geladen.
+
+![RSS-Feed in Audiobookshelf hinzufügen](./add-rss-feed.png)
+
+Wenn ihr jetzt auf die Lupe klickt, könnt ihr euch alle verfügbaren Episoden ansehen.
+
+![Alle Episoden eines Feeds anzeigen](./download-latest-episodes.png)
+
+Hier könnt ihr den automatischen Download neuer Folgen aktivieren.
+
+![Automatischen Download in Audiobookshelf aktivieren](./add-rss-feed-detail.png)
+
+Oder ältere Folgen einfach manuell herunterladen und in euren Podcatcher laden.
+
+![Ältere Episoden manuell herunterladen](./download-latest-episodes-2.png)
+
+---
+
+Als App fürs Smartphone empfehle ich für Android [Lissen](https://github.com/GrakovNe/lissen-android). Damit bin ich persönlich total zufrieden.
+
+Als iOS-Version würde ich [Plappa](https://github.com/LeoKlaus/plappa) empfehlen – hier wird sogar CarPlay-Integration unterstützt.
+
+Weitere Clients kann man [hier](https://www.audiobookshelf.org/faq/app/#are-there-any-3rd-party-apps) einsehen.
+
+---
+
+## Fazit:
+
+Audiobookshelf ist schnell eingerichtet und sehr intuitiv zu bedienen. Es erledigt die gewünschten Aufgaben – wie den automatischen Download neuer Folgen – zuverlässig und macht damit genau das, was es soll.
+
+Das Web-Frontend ist schön designt, responsive und übersichtlich gestaltet. Dazu gibt es eine ganze Reihe richtig cooler Open-Source-Third-Party-Apps.  
+Hier sollte wirklich für jeden Geschmack und Einsatzzweck etwas dabei sein.
+
+---
+
+## Extra 
+Audiobookshelf unterstützt OIDC-Login und kann ganz schnell mit Hilfe von [PocketID](/posts/pocket-id) aktiviert werden.  
+Wie das geht, liest du am besten direkt in den Docs der [PocketID-Documentation](https://pocket-id.org/docs/client-examples/audiobookshelf).

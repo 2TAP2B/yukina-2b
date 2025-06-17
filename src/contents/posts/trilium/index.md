@@ -55,7 +55,7 @@ Bevor wir starten, stellt sicher, dass folgende Voraussetzungen erfüllt sind:
 
 Zuerst legen wir uns passende Ordner-Strukturen an.
 
-```
+```bash
 mkdir -p /opt/containers/trilium
 ```
 
@@ -63,7 +63,7 @@ mkdir -p /opt/containers/trilium
 
 ## Compose Datei anlegen
 
-```
+```bash
 nano /opt/containers/trilium/compose.yml
 ```
 
@@ -102,7 +102,7 @@ networks:
 ## Trilium starten
 
 Nun starten wir den Container mittels folgendem Befehl:
-```
+```bash
 docker compose -f /opt/containers/trilium/compose.yml up -d
 ```
 Es kann ein paar Minuten dauern, bis der Container fertig gebaut ist.

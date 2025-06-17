@@ -59,7 +59,7 @@ Bevor wir starten, stellt sicher, dass folgende Voraussetzungen erfüllt sind:
 
 Zuerst legen wir uns passende Ordner-Strukturen an.
 
-```
+```bash
 mkdir -p /opt/containers/linkding
 ```
 
@@ -67,7 +67,7 @@ mkdir -p /opt/containers/linkding
 
 ## Compose Datei anlegen
 
-```
+```bash
 nano /opt/containers/linkding/compose.yml
 ```
 
@@ -105,7 +105,7 @@ networks:
 ---
 
 ## .ENV Datei anlegen
-```
+```bash
 nano /opt/containers/linkding/.env  
 ``` 
 
@@ -171,7 +171,7 @@ Noch anzupassen:
 ## Linkding starten
 
 Nun starten wir den Container mittels folgendem Befehl:
-``` 
+``` bash
 docker compose -f /opt/containers/linkding/compose.yml up -d
 ```
 

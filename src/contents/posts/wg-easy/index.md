@@ -36,7 +36,7 @@ Stellt vor dem Start sicher, dass folgende Voraussetzungen erfüllt sind:
 
 ## 3. Ordner anlegen
 
-```
+```bash
 mkdir -p /opt/containers/wg-easy
 ```
 
@@ -44,7 +44,7 @@ mkdir -p /opt/containers/wg-easy
 
 ## 4. Compose Datei anlegen
 
-```
+```bash
 nano /opt/containers/wg-easy/compose.yml
 ```
 
@@ -117,7 +117,7 @@ networks:
 
 Nun starten wir den Container mit folgendem Befehl:
 
-```
+```bash
 docker compose -f /opt/containers/wg-easy/compose.yml up -d
 ```
 
