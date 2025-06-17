@@ -2,7 +2,7 @@
 title: 'Note-Taking-Apps'
 description: 'Mein Weg zur perfekten Open-Source-Lösung'
 published: 2025-06-06
-tags: ['Notes', 'Sync', 'Mobile', 'Desktop', 'Docker', 'Backup', 'Open-Source']
+tags: ['Notes', 'Sync', 'Mobile', 'Desktop', 'Docker', 'Open-Source']
 cover: /images/posts/notes.png
 category: Notes
 ---
