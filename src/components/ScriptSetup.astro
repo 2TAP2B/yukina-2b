@@ -9,7 +9,7 @@
   // setup post url
   const setupUrlAnchor = () => {
     const url = window.location.href;
-    const urlElement = document.getElementById("post-url") as HTMLAnchorElement;
+    const urlElement = document.getElementById("post-url");
     if (urlElement) {
       urlElement.href = url;
       urlElement.innerText = url;
@@ -62,7 +62,7 @@
 
   document.addEventListener("DOMContentLoaded", setup);
   if (window.swup?.hooks) {
-    setup();
+    window.swup.hooks.on("content:replace", setup);
   } else {
     document.addEventListener("swup:enable", () => {
       window.swup.hooks.on("content:replace", setup);

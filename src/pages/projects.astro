@@ -34,4 +34,52 @@ const { title, subTitle, bannerImage, published } = Astro.props;
   .article {
     @apply flex flex-col;
   }
+  
+  /* Fix heading styling */
+  .article :global(h1) {
+    position: relative;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    font-family: var(--brand-font);
+    border-left: none;
+    padding-left: 0;
+  }
+  
+  .article :global(h1::before) {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--primary-color), var(--primary-color-hover));
+    border-radius: 2px;
+  }
+  
+  /* Remove any pipe symbols */
+  .article :global(h1 .header-anchor) {
+    display: none;
+  }
+  
+  /* Improve overall spacing */
+  .article :global(.projects-showcase) {
+    margin-top: 3rem;
+  }
+  
+  /* Responsive improvements */
+  @media (max-width: 768px) {
+    .article-wrapper {
+      @apply p-6;
+    }
+    
+    .article :global(h1) {
+      font-size: 2rem;
+    }
+    
+    .article :global(h1::before) {
+      left: -1.5rem;
+    }
+  }
 </style>

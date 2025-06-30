@@ -29,10 +29,6 @@ const YukinaConfig: Configuration = {
       nameKey: I18nKeys.nav_bar_projects,
       href: "/projects",
     },
-    {
-      nameKey: I18nKeys.nav_bar_github,
-      href: "https://github.com/WhitePaper233/yukina",
-    },
   ],
 
   username: "2tap2b",
