@@ -19,6 +19,37 @@ import pagefind from "astro-pagefind";
 // https://astro.build/config
 export default defineConfig({
   site: YukinaConfig.site,
+  output: "static",
+  build: {
+    inlineStylesheets: "auto",
+    assets: "_assets",
+  },
+  image: {
+    service: {
+      entrypoint: "astro/assets/services/sharp",
+      config: {
+        limitInputPixels: false,
+      },
+    },
+  },
+  vite: {
+    build: {
+      cssCodeSplit: true,
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            vendor: ['lozad', 'overlayscrollbars'],
+          },
+        },
+      },
+    },
+    ssr: {
+      noExternal: ['overlayscrollbars'],
+    },
+    optimizeDeps: {
+      include: ['lozad', 'overlayscrollbars'],
+    },
+  },
   integrations: [
     tailwind(),
     svelte(),

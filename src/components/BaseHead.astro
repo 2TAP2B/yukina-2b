@@ -15,6 +15,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <!-- Performance Hints -->
 <meta name="robots" content="index,follow" />
 <meta name="googlebot" content="index,follow" />
+<link rel="dns-prefetch" href="//fonts.bunny.net" />
+<link rel="dns-prefetch" href="//fastly.jsdelivr.net" />
+<link rel="preconnect" href="https://fonts.bunny.net" crossorigin />
+<link rel="preconnect" href="https://fastly.jsdelivr.net" crossorigin />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
@@ -49,17 +53,37 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <!-- SiteMap -->
 <link rel="sitemap" href="/sitemap-index.xml" />
 
-<!-- CSS -->
+<!-- DNS Prefetch for faster connections -->
+<link rel="dns-prefetch" href="https://fonts.bunny.net" />
+<link rel="dns-prefetch" href="https://fastly.jsdelivr.net" />
+
+<!-- Critical CSS with optimized loading -->
 <link
-  rel="stylesheet"
+  rel="preload"
   href="https://fastly.jsdelivr.net/npm/katex/dist/katex.min.css"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
 />
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.bunny.net" />
+<noscript>
+  <link
+    rel="stylesheet"
+    href="https://fastly.jsdelivr.net/npm/katex/dist/katex.min.css"
+  />
+</noscript>
+
+<!-- Optimized font loading -->
 <link
-  href="https://fonts.bunny.net/css?family=noto-sans-sc:100,200,300,400,500,600,700,800,900|raleway:500,700"
-  rel="stylesheet"
+  rel="preload"
+  href="https://fonts.bunny.net/css?family=noto-sans-sc:400,500,700|raleway:500,700&display=swap"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
 />
+<noscript>
+  <link
+    href="https://fonts.bunny.net/css?family=noto-sans-sc:400,500,700|raleway:500,700&display=swap"
+    rel="stylesheet"
+  />
+</noscript>
 
 <GlobalStyles />
 <ScriptSetup />
