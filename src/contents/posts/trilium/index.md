@@ -33,12 +33,15 @@ Trilium ist eine extrem vielseitige Notizverwaltungssoftware mit einem starken F
 
 - Funktioniert komplett im Browser, fühlt sich aber wie eine native App an
 
+> Ab v0.96.0 mit /slash Commands -> Richtig nice!
+
 ---
 
 #### Versionierung
 Datum | Änderung
 --|--
 07-06-2025| Initialer Release
+04-07-2025| Neues Docker Image v0.96.0
 
 ---
 
@@ -70,7 +73,7 @@ nano /opt/containers/trilium/compose.yml
 ```yaml title="compose.yml"
 services:
   trilium:
-    image: triliumnext/notes:latest
+    image: triliumnext/trilium
     restart: unless-stopped
     environment:
       - TRILIUM_DATA_DIR=/home/node/trilium-data
