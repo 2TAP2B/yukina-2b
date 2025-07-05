@@ -4,6 +4,7 @@ import YukinaConfig from "../../yukina.config";
 import { i18n } from "../locales/translation";
 import I18nKeys from "../locales/keys";
 import { GetCategories, GetTags } from "../utils/content";
+import CookieSettings from "./CookieSettings.svelte";
 
 const categories = await GetCategories();
 const tags = await GetTags();
@@ -171,24 +172,55 @@ const tagKeys = [...tags.keys()];
       <div></div>
       <div></div>
     </div>
-    <div
-      class="flex w-full flex-col items-center text-sm text-[var(--text-color-lighten)]"
-    >
-      <p>
-        © {new Date().getFullYear()}
-        {YukinaConfig.username} All Rights Reserved.
-      </p>
-      <p>
-        Powered By <a
-          class="link"
-          href="https://github.com/WhitePaper233/yukina">Yukina</a
-        > & <a class="link" href="https://astro.build/">Astro</a>
-      </p>
-      <p>
-        <a class="link" href={new URL("sitemap-index.xml", YukinaConfig.site)}
-          >SiteMap</a
-        > / <a class="link" href="/rss.xml">RSS</a>
-      </p>
+    <div class="bg-gray-50 dark:bg-[#2a2531]/50 py-8 rounded-lg border dark:border-[#a98bde]/20">
+      <div class="max-w-4xl mx-auto px-4">
+        <!-- Footer links with icons -->
+        <div class="flex flex-wrap justify-center items-center gap-6 mb-6">
+          <a class="footer-link-icon" href="/rss.xml">
+            <Icon name="line-md:rss" class="w-5 h-5" />
+            RSS Feed
+          </a>
+          <a class="footer-link-icon" href={new URL("sitemap-index.xml", YukinaConfig.site)}>
+            <Icon name="line-md:close-to-menu-alt-transition" class="w-5 h-5" />
+            Sitemap
+          </a>
+          <a class="footer-link-icon" href="/datenschutz">
+            <Icon name="line-md:document-list" class="w-5 h-5" />
+            Datenschutz
+          </a>
+          <a class="footer-link-icon" href="/about">
+            <Icon name="line-md:person" class="w-5 h-5" />
+            Impressum
+          </a>
+          <CookieSettings client:load />
+          </div>
+        </div>
+        
+        <!-- Divider -->
+        <div class="border-t border-gray-200 dark:border-[#a98bde]/30 pt-6">
+          <!-- Creative Commons License -->
+          <div class="text-center">
+            <div class="flex flex-col items-center gap-3 mb-4">
+              <div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+                <Icon name="line-md:emoji-smile-twotone" class="w-5 h-5" />
+                <span>Content licensed under</span>
+                <a 
+                  class="footer-link font-medium" 
+                  href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  CC BY-NC-SA 4.0
+                </a>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              Blog by {YukinaConfig.username} • Powered by <a class="footer-link" href="https://github.com/WhitePaper233/yukina">Yukina</a> 
+              & <a class="footer-link" href="https://astro.build/">Astro</a>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </footer>
 </div>
@@ -196,6 +228,19 @@ const tagKeys = [...tags.keys()];
 <style>
   .link {
     @apply text-[var(--primary-color)] transition-all hover:brightness-110;
+  }
+
+  .footer-link {
+    @apply text-gray-600 dark:text-gray-300 hover:text-[var(--primary-color)] 
+           dark:hover:text-[#a98bde] transition-colors duration-200 
+           hover:underline decoration-2 underline-offset-2;
+  }
+
+  .footer-link-icon {
+    @apply flex items-center gap-2 text-gray-600 dark:text-gray-300 
+           hover:text-[var(--primary-color)] dark:hover:text-[#a98bde] 
+           transition-colors duration-200 text-sm font-medium
+           hover:scale-105 transform;
   }
 
   .category {

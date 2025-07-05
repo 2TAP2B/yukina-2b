@@ -5,7 +5,38 @@ import BaseHead from "../components/BaseHead.astro";
 
 <html lang={YukinaConfig.locale}>
   <BaseHead />
-  <script defer src="https://umami.sohn.uk/script.js" data-website-id="8ef3db19-7aba-474e-8c36-02beca409291"></script>
+  <script defer src="https://umami.sohn.uk/script.js" data-website-id="8ef3db19-7aba-474e-8c36-02beca409291" id="umami-script"></script>
+  <script>
+    // Handle Umami analytics based on cookie consent
+    document.addEventListener('DOMContentLoaded', function() {
+      const consent = localStorage.getItem('cookie-consent');
+      if (consent) {
+        try {
+          const preferences = JSON.parse(consent);
+          if (!preferences.analytics) {
+            // Disable Umami if analytics consent is not given
+            (window as any)['umami-disabled'] = true;
+          }
+        } catch (e) {
+          console.error('Error parsing cookie consent:', e);
+        }
+      }
+    });
+
+    // Listen for consent updates
+    window.addEventListener('cookieConsentUpdated', function(e: any) {
+      const preferences = e.detail;
+      if (preferences.analytics) {
+        // Enable analytics
+        delete (window as any)['umami-disabled'];
+        console.log('Analytics consent granted');
+      } else {
+        // Disable analytics
+        (window as any)['umami-disabled'] = true;
+        console.log('Analytics consent revoked');
+      }
+    });
+  </script>
   <body class="overflow-y-hidden">
     <slot />
   </body>

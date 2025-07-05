@@ -1,0 +1,30 @@
+---
+import { getEntry, render } from "astro:content";
+import Main from "../layouts/MainLayout.astro";
+import Markdown from "../components/Markdown.astro";
+import CopyRight from "../components/misc/CopyRight.astro";
+
+const datenschutzPost = await getEntry("specs", "datenschutz");
+const { Content } = await render(datenschutzPost!);
+---
+
+<Main title="Datenschutzerklärung" subTitle="Informationen zum Umgang mit Ihren Daten">
+  <div class="article-wrapper">
+    <div class="article">
+      <Markdown>
+        <Content />
+      </Markdown>
+      <CopyRight title="Datenschutzerklärung" published={new Date('2025-07-05')} />
+    </div>
+  </div>
+</Main>
+
+<style>
+  .article-wrapper {
+    @apply w-full;
+  }
+
+  .article {
+    @apply mx-auto w-full max-w-none px-4;
+  }
+</style>
