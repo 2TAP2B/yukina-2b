@@ -1,0 +1,62 @@
+---
+import { Image } from 'astro:assets';
+
+export interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  decoding?: 'async' | 'sync' | 'auto';
+  priority?: boolean;
+}
+
+const {
+  src,
+  alt,
+  width = 800,
+  height = 600,
+  class: className = '',
+  loading = 'lazy',
+  decoding = 'async',
+  priority = false,
+  ...rest
+} = Astro.props;
+
+// Determine if this is a local or external image
+const isExternal = src.startsWith('http') || src.startsWith('//');
+const loadingStrategy = priority ? 'eager' : loading;
+---
+
+{isExternal ? (
+  <img
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    class={className}
+    loading={loadingStrategy}
+    decoding={decoding}
+    {...rest}
+  />
+) : (
+  <Image
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    class={className}
+    loading={loadingStrategy}
+    decoding={decoding}
+    {...rest}
+  />
+)}
+
+<style>
+  img {
+    height: auto;
+    max-width: 100%;
+    display: block;
+  }
+</style>

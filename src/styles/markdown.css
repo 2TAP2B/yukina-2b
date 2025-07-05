@@ -140,3 +140,253 @@
   border-radius: 0.75rem !important;
   scrollbar-width: thin;
 }
+
+/* About page styling */
+.about-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.author-card {
+  position: relative;
+  top: auto;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100px);
+  background: var(--card-bg-color);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  width: 400px;
+  max-width: 90%;
+  z-index: 40;
+  opacity: 0;
+  backdrop-filter: blur(10px);
+  margin: 2rem auto;
+  
+  /* Slide in animation from center */
+  animation: slideInCenter 1.2s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes slideInCenter {
+  0% {
+    transform: translateX(-50%) translateY(-100px);
+    opacity: 0;
+  }
+  80% {
+    transform: translateX(-50%) translateY(10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInCenter {
+  0% {
+    transform: translateX(-50%) translateY(-100px);
+    opacity: 0;
+  }
+  80% {
+    transform: translateX(-50%) translateY(10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+.author-card {
+  flex-direction: row;
+  text-align: left;
+  gap: 2rem;
+  align-items: center;
+}
+
+.author-image {
+  flex-shrink: 0;
+  position: relative;
+}
+
+.author-image img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary-color);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+}
+
+.author-image:hover img {
+  transform: scale(1.05);
+}
+
+.author-info h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.author-title {
+  color: var(--text-color-secondary);
+  font-size: 1rem;
+  margin: 0 0 1.2rem 0;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.social-links {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  background: var(--primary-color-lighten);
+  color: var(--primary-color);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.social-link:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.social-icon {
+  font-size: 1.1rem;
+}
+
+.about-content {
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 1s;
+  opacity: 0;
+  transform: translateY(30px);
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+.about-content h3 {
+  font-size: 1.8rem;
+  margin: 2.5rem 0 1rem 0;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.about-content h4,
+.about-content strong {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 1.5rem 0 0.5rem 0;
+  display: block;
+}
+
+.about-content ul {
+  margin: 0.5rem 0 2rem 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.about-content li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+  color: var(--text-color-secondary);
+}
+
+.about-content li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .author-card {
+    flex-direction: column;
+    text-align: center;
+    width: 95%;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+  
+  .author-image img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .author-info h2 {
+    font-size: 1.5rem;
+  }
+  
+  .author-title {
+    font-size: 0.9rem;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+  
+  .social-link {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .about-content {
+    padding: 1rem;
+  }
+  
+  .about-content h2 {
+    font-size: 2rem;
+  }
+  
+  .about-content h3 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Dark mode specific adjustments */
+:global(.dark) .author-card {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+:global(.dark) .social-link:hover {
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}

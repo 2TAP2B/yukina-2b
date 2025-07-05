@@ -2,6 +2,7 @@
 import Base from "./BaseLayout.astro";
 import NavBar from "../components/NavBar.astro";
 import Banner from "../components/Banner.astro";
+import BackToTop from "../components/BackToTop.astro";
 
 import YukinaConfig from "../../yukina.config";
 import Footer from "../components/Footer.astro";
@@ -44,6 +45,9 @@ const props = Astro.props;
       </div>
     </div>
   </div>
+  
+  <!-- Back to Top Button -->
+  <BackToTop />
 </Base>
 
 <style>

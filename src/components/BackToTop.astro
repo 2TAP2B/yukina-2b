@@ -1,0 +1,154 @@
+---
+// BackToTop component - Smooth scroll to top with fade in/out animation
+---
+
+<button id="back-to-top" class="back-to-top-btn" aria-label="Back to top" title="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 19V5M5 12L12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+<script>
+  // Back to top functionality
+  function initBackToTop() {
+    const backToTopBtn = document.getElementById('back-to-top');
+    if (!backToTopBtn) return;
+
+    // Show/hide button based on scroll position
+    function toggleButton() {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    }
+
+    // Smooth scroll to top
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    // Event listeners
+    window.addEventListener('scroll', toggleButton);
+    backToTopBtn.addEventListener('click', scrollToTop);
+
+    // Initial check
+    toggleButton();
+  }
+
+  // Initialize on DOM content loaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBackToTop);
+  } else {
+    initBackToTop();
+  }
+
+  // Re-initialize for SPA navigation (if using)
+  document.addEventListener('astro:page-load', initBackToTop);
+</script>
+
+<style>
+  .back-to-top-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 50;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+  }
+
+  .back-to-top-btn:hover {
+    background: rgba(0, 0, 0, 0.85);
+    transform: translateY(8px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  .back-to-top-btn:active {
+    transform: translateY(9px) scale(0.98);
+  }
+
+  .back-to-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .back-to-top-btn svg {
+    transition: transform 0.2s ease;
+  }
+
+  .back-to-top-btn:hover svg {
+    transform: translateY(-1px);
+  }
+
+  /* Dark mode support */
+  :global(.dark) .back-to-top-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  :global(.dark) .back-to-top-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Light mode (default) */
+  :global(.light) .back-to-top-btn,
+  :global(html:not(.dark)) .back-to-top-btn {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  :global(.light) .back-to-top-btn:hover,
+  :global(html:not(.dark)) .back-to-top-btn:hover {
+    background: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .back-to-top-btn {
+      bottom: 1.5rem;
+      right: 1.5rem;
+      width: 2.75rem;
+      height: 2.75rem;
+    }
+    
+    .back-to-top-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .back-to-top-btn {
+      transition: opacity 0.3s ease;
+    }
+    
+    .back-to-top-btn:hover {
+      transform: none;
+    }
+  }
+</style>
