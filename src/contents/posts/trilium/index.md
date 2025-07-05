@@ -1,7 +1,7 @@
 ---
 title: 'Trilium installieren mit Docker und Traefik'
 description: 'TriliumNext Notes ist eine freie und quelloffene, plattformübergreifende Anwendung für hierarchische Notizen mit Schwerpunkt auf dem Aufbau großer persönlicher Wissensdatenbanken.'
-published: 2025-06-07
+published: 2025-07-04
 tags: ['Notes', 'Sync', 'Mobile', 'Desktop', 'Docker', 'Open-Source']
 cover: /images/posts/trilium.png
 category: Notes
