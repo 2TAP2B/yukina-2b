@@ -1,10 +1,11 @@
 ---
 title: 'Palmr installieren mit Docker und Hetzner S3'
-description: 'Palmr ist ein moderner, funktionsreicher Nachfolger von PingvinShare mit Support für S3, SMTP, Reverse Sharing und vielem mehr.'
+description: 'Palmr ist eine Open-Source Filesharing Plattform mit Fokus auf Datenschutz und Sicherheit.'
 published: 2025-07-07
 tags: ['File Sharing', 'Docker', 'Selfhosted', 'S3', 'Traefik', 'Open-Source']
 cover: /images/posts/palmr.png
 category: File Sharing
+darft: true
 ---
 
 Nachdem der Entwickler von [PingvinShare](https://github.com/stonith404/pingvin-share) sein Repository archiviert hat, musste ich mich auf die Suche nach einer würdigen Alternative machen.
@@ -40,7 +41,7 @@ Bevor du loslegst, stelle sicher, dass folgendes bereitsteht:
 
 - [Docker & Docker Compose v2](/posts/server-setup#5-docker-und-docker-compose)
 - [Traefik Setup](/posts/traefik)
-- Ein [Hetzner S3 Bucket](https://docs.hetzner.com/de/storage-box/konsoleh/s3/) (mit aktivierter Public Visibility!)
+- [Ein Hetzner S3 Bucket](https://www.hetzner.com/storage/object-storage/) (mit aktivierter Public Visibility!)
 - [awscli installiert](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 
 ---
@@ -144,6 +145,7 @@ nano cors.json
   ]
 }
 ```
+> Passe hier deine `Domain` an.
 
 **Wichtig:** Bucket-Visibility auf **Public** stellen (Hetzner Console > Bucket > Aktionen > Sichtbarkeit zurücksetzen > Öffentlich)
 
@@ -160,6 +162,10 @@ aws s3api put-bucket-cors \
   --endpoint-url https://region.your-objectstorage.com
 ```
 
+> Hier muss natürlich dein Bucketname und dein Endpoint angepasst werden.
+
+Wenn hier der Befehl fehlerfrei durchläuft sollte die CORS Konfiguration geklappt haben.
+
 ---
 
 ## Palmr starten
@@ -172,28 +178,29 @@ docker compose up -d
 
 ## Palmr öffnen
 
-Im Browser `https://drop.deine.cloud` öffnen – du solltest das UI von Palmr sehen. Nun kannst du Dateien hochladen und auch öffentliche Shares erstellen.
+Im Browser `https://drop.deine.cloud` öffnen – du solltest das UI von Palmr sehen. 
+
+![palmr-init](./palmr1.png)
+
+Hier kannst du einen Admin-Account anlegen und dich anschließend einloggen.
+
+![palmr-login](./palmr2.png)
+
+Dann wirst du vom Palm-Dashboard begrüßt.
+
+![palmr-dashboard](./palmr3.png)
 
 ---
 
-## SMTP aktivieren (optional)
+## Weitere Settings
 
-Palmr unterstützt SMTP zum Versenden von E-Mails (z. B. bei Passwort-Reset). Dafür einfach zusätzliche Umgebungsvariablen setzen – Beispiel:
-
-```env
-SMTP_HOST=smtp.mailbox.org
-SMTP_PORT=587
-SMTP_SECURE=false
-SMTP_USER=username@mailbox.org
-SMTP_PASS=deinpasswort
-SMTP_FROM=share@deine.domain
-```
+Unter `Settings` kannst du nun dein eigenes Logo hochladen, den App-Namen ändern, SMTP konfigurieren, Pocket ID als dein IDP für den passwortlosen Login einrichten, eine Art Fail2Ban für den Login konfigurieren und die maximale Dateigröße pro Benutzer festlegen.
 
 ---
 
 ## Fazit
 
-Palmr ist für mich der perfekte Nachfolger von PingvinShare. Die Kombination aus moderner UI, S3-Unterstützung, Reverse Sharing und einfacher Docker-Integration macht es zu einem starken Tool für das private oder semi-professionelle File-Sharing.
+Palmr ist für mich der perfekte Nachfolger von PingvinShare. Die Kombination aus moderner UI, S3-Unterstützung, Reverse Sharing und einfacher Docker-Integration macht es zu einem starken Tool.
 
 Wenn du ein Tool wie WeTransfer suchst, aber unter deiner Kontrolle – schau dir Palmr definitiv an.
 

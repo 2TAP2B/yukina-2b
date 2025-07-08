@@ -62,14 +62,16 @@
 
 <button
   on:click={openModal}
-  class="flex items-center gap-2 text-gray-600 dark:text-gray-300 
-         hover:text-[#a98bde] dark:hover:text-[#a98bde] 
-         transition-colors duration-200 text-sm font-medium
-         hover:scale-105 transform"
+  class="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-[#a98bde] dark:hover:text-[#a98bde] transition-colors duration-200 text-sm font-medium hover:scale-105 transform"
   title="Cookie-Einstellungen verwalten"
 >
-  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 12c.5-1 1.5-2 2.5-2s2 1 2 2-1 2-2 2-2-1-2-2z"/>
+    <path d="M12 12c-.5-1-1.5-2-2.5-2S7.5 11 7.5 12s1 2 2 2 2-1 2-2z"/>
+    <circle cx="12" cy="12" r="10"/>
+    <path d="M8 12c0-.5.5-1 1-1s1 .5 1 1-.5 1-1 1-1-.5-1-1z"/>
+    <path d="M14 12c0-.5.5-1 1-1s1 .5 1 1-.5 1-1 1-1-.5-1-1z"/>
+    <path d="m9 20 6-8"/>
   </svg>
   Cookie-Einstellungen
 </button>
@@ -234,26 +236,20 @@
         <div class="flex flex-col sm:flex-row gap-3 pt-6 border-t border-gray-200 dark:border-[#a98bde]/30">
           <button
             on:click={resetPreferences}
-            class="px-4 py-2 text-sm font-medium text-red-600 dark:text-red-400 
-                   bg-transparent border border-red-300 dark:border-red-600 rounded-lg 
-                   hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors duration-200"
+            class="px-4 py-2 text-sm font-medium text-red-600 dark:text-red-400 bg-transparent border border-red-300 dark:border-red-600 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors duration-200"
           >
             Alle zurücksetzen
           </button>
           <div class="flex-1"></div>
           <button
             on:click={closeModal}
-            class="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 
-                   bg-transparent border border-gray-300 dark:border-[#a98bde]/50 rounded-lg 
-                   hover:bg-gray-50 dark:hover:bg-[#a98bde]/10 dark:hover:border-[#a98bde] transition-colors duration-200"
+            class="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-transparent border border-gray-300 dark:border-[#a98bde]/50 rounded-lg hover:bg-gray-50 dark:hover:bg-[#a98bde]/10 dark:hover:border-[#a98bde] transition-colors duration-200"
           >
             Abbrechen
           </button>
           <button
             on:click={savePreferences}
-            class="px-6 py-2 text-sm font-medium text-white bg-[#a98bde] dark:bg-[#a98bde] rounded-lg 
-                   hover:bg-[#9b7dd9] dark:hover:bg-[#9b7dd9] transition-colors duration-200 focus:ring-4 
-                   focus:ring-[#a98bde]/50 dark:focus:ring-[#a98bde]/50"
+            class="px-6 py-2 text-sm font-medium text-white bg-[#a98bde] dark:bg-[#a98bde] rounded-lg hover:bg-[#9b7dd9] dark:hover:bg-[#9b7dd9] transition-colors duration-200 focus:ring-4 focus:ring-[#a98bde]/50 dark:focus:ring-[#a98bde]/50"
           >
             Speichern
           </button>

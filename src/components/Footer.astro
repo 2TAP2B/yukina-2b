@@ -172,10 +172,10 @@ const tagKeys = [...tags.keys()];
       <div></div>
       <div></div>
     </div>
-    <div class="bg-gray-50 dark:bg-[#2a2531]/50 py-8 rounded-lg border dark:border-[#a98bde]/20">
+    <div class="bg-gray-50 dark:bg-[#2a2531]/50 py-4 rounded-lg border dark:border-[#a98bde]/20">
       <div class="max-w-4xl mx-auto px-4">
         <!-- Footer links with icons -->
-        <div class="flex flex-wrap justify-center items-center gap-6 mb-6">
+        <div class="flex flex-wrap justify-center items-center gap-6 mb-3">
           <a class="footer-link-icon" href="/rss.xml">
             <Icon name="line-md:rss" class="w-5 h-5" />
             RSS Feed
@@ -197,26 +197,25 @@ const tagKeys = [...tags.keys()];
         </div>
         
         <!-- Divider -->
-        <div class="border-t border-gray-200 dark:border-[#a98bde]/30 pt-6">
-          <!-- Creative Commons License -->
+        <div class="border-t border-gray-200 dark:border-[#a98bde]/30 pt-3">
+          <!-- Creative Commons License and Blog info in one line -->
           <div class="text-center">
-            <div class="flex flex-col items-center gap-3 mb-4">
-              <div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-                <Icon name="line-md:emoji-smile-twotone" class="w-5 h-5" />
-                <span>Content licensed under</span>
-                <a 
-                  class="footer-link font-medium" 
-                  href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  CC BY-NC-SA 4.0
-                </a>
-              </div>
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-400">
-              Blog by {YukinaConfig.username} • Powered by <a class="footer-link" href="https://github.com/WhitePaper233/yukina">Yukina</a> 
-              & <a class="footer-link" href="https://astro.build/">Astro</a>
+            <p class="text-sm text-gray-600 dark:text-gray-400 flex flex-wrap justify-center items-center gap-1">
+              <Icon name="line-md:emoji-smile-twotone" class="w-4 h-4" />
+              <span>Content licensed under</span>
+              <a 
+                class="footer-link font-medium" 
+                href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                CC BY-NC-SA 4.0
+              </a>
+              <span>•</span>
+              <span>Powered by</span>
+              <a class="footer-link" href="https://github.com/WhitePaper233/yukina">Yukina</a>
+              <span>&</span>
+              <a class="footer-link" href="https://astro.build/">Astro</a>
             </p>
           </div>
         </div>
