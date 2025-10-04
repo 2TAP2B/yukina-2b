@@ -20,6 +20,7 @@
 ```bash
 corepack enable
 ```
+zrdz
 
 ### 3. 安装 pnpm 或以上版本
 
